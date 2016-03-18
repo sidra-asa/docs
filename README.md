@@ -1,2 +1,2 @@
 # docs
-Some installating instruction or notes
+Some instruction or notes
