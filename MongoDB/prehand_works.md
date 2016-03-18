@@ -5,7 +5,7 @@
 
 ## Run in NUMA Hardware
 
-Here's some description from [official document]('https://docs.mongodb.org/manual/administration/production-notes/#mongodb-and-numa-hardware'):
+Here's some description from [official document](https://docs.mongodb.org/manual/administration/production-notes/#mongodb-and-numa-hardware):
 
 > Running MongoDB on a system with Non-Uniform Access Memory (NUMA) can cause a number of operational problems, including slow performance for periods of time and high system process usage.
 >
@@ -29,7 +29,7 @@ We might see some warning like following while enter MongoDB shell:
      ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
      **        We suggest setting it to 'never'
      
-These may lead to poor performance, described by [document]('https://docs.mongodb.org/manual/tutorial/transparent-huge-pages/').<p>
+These may lead to poor performance, described by [document](https://docs.mongodb.org/manual/tutorial/transparent-huge-pages/).<p>
 Excute following command, also add them to /etc/rc.local:
 
     $ sudo su -
