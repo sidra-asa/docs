@@ -40,11 +40,14 @@ Modify /etc/mongod.conf in shardI1 as below:
     replication:
       replSetName: shardI
 
+    sharding:
+      clusterRole: shardsvr
+
 Restart mongod then initial replica:
 
     $ sudo service mongod restart
 
-    $mongo 10.3.40.34
+    $mongo 192.168.0.4
     MongoDB shell version: 3.2.4
     connecting to: test
     > rs.initiate()
@@ -68,7 +71,7 @@ Add following lines to /etc/mongod.conf in config1:
 
     net:
       port: 27017
-      bindIp: 127.0.0.1, 10.3.30.32
+      bindIp: 127.0.0.1, 192.168.0.2
 
 
     replication:
@@ -84,11 +87,6 @@ Redo above works to config2.
 
 ## mongos
 
-add following line to /etc/mongod.conf in config1:
-
-    sharding:
-      clusterRole: configsvr
-
 excute following command:
 
 
@@ -97,7 +95,7 @@ excute following command:
 
 Add shards to mongos:
 
-    $ mongo 10.3.40.31
+    $ mongo 192.168.0.1
     MongoDB shell version: 3.2.4
     connecting to: test
     mongos> sh.addShard( "shardI/shardI1:27017,shardI2:27017" )
